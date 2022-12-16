@@ -1,0 +1,15 @@
+package java009_inheritance.part08;
+
+public class Java099_inheritance {
+	
+	public static void main(String[] args) {
+		FireEngine fe = new FireEngine();
+		fe.setWater(10000);
+		fe.setSpeed(100);
+		fe.setColor("RDE");
+		fe.waterSpread();
+		//System.out.println(fe.waterSpread());
+		System.out.println(fe.toString());
+	}//end 
+	
+}

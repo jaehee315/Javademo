@@ -1,0 +1,30 @@
+package java021_network;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Java221_ChatServer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ServerSocket server = null;
+		
+		try {
+			server = new ServerSocket(7777);
+			while(true) {
+				Socket client = server.accept();
+				System.out.printf("client가 %s로 접속\n", client.getInetAddress().getHostAddress());
+				
+				Java221_ChatHandler handle = new Java221_ChatHandler(client);
+				handle.initStart();
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}
